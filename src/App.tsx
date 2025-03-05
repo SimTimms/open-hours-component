@@ -29,7 +29,6 @@ export default function App() {
 
   function saveFunction(values: openingHoursType) {
     //Use localStorage to save the opening hours in place of a real API call
-    console.log("Save function called", values);
     localStorage.setItem("react-temp-opening-hours", JSON.stringify(values));
   }
 
