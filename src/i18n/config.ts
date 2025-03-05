@@ -21,7 +21,7 @@ i18n.use(initReactI18next).init({
         open: "Open",
         close: "Close",
         save: "Save",
-        saved: "Saved",
+        saved: "No Changes",
         noSaveFunction: "This button has no save function",
       },
     },

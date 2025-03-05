@@ -20,7 +20,7 @@ function OpeningHoursWrapper(props: OpeningHoursWrapperProps) {
   const { saveCallback, openingHoursValues } = props;
   const { t } = useTranslation();
 
-  const [saveButtonState, setSaveButtonState] = useState<number>(0);
+  const [saveButtonState, setSaveButtonState] = useState<number>(-1);
   const newOpeningHours = useRef<openingHoursType>(openingHoursValues);
 
   useEffect(() => {
@@ -84,9 +84,10 @@ function OpeningHoursWrapper(props: OpeningHoursWrapperProps) {
 
           setSaveButtonState(0);
         }}
-        disabled={!saveCallback}
+        disabled={!saveCallback || saveButtonState <= 0}
+        sx={{ width: "200px" }}
       >
-        {saveButtonState === 0 ? t("saved") : t("save")}
+        {saveButtonState > 0 ? t("save") : t("saved")}
       </Button>
     </Container>
   );
